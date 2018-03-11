@@ -160,11 +160,11 @@ def download_mnist(dirpath):
     cmd = ['curl', url, '-o', out_path]
     print('Downloading ', file_name)
     print(cmd)
-    subprocess.call(cmd)
+    subprocess.call(cmd, shell=True)
     #os.chdir()
     cmd = ['gzip', '-d', out_path]
     print('Decompressing ', file_name)
-    subprocess.call(cmd)
+    subprocess.call(cmd, shell=True)
 
 def prepare_data_dir(path = './data'):
   if not os.path.exists(path):
