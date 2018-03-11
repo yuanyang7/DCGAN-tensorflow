@@ -159,8 +159,8 @@ def download_mnist(dirpath):
     out_path = os.path.join(data_dir,file_name)
     cmd = ['curl', url, '-o', out_path]
     print('Downloading ', file_name)
-    #subprocess.call("(cd ~/catkin_ws/src && catkin_make)", shell=True)
-    os.chdir()
+    subprocess.call(cmd)
+    #os.chdir()
     cmd = ['gzip', '-d', out_path]
     print('Decompressing ', file_name)
     subprocess.call(cmd)
