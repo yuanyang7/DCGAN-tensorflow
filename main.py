@@ -27,7 +27,7 @@ flags.DEFINE_boolean("visualize", False, "True for visualizing, False for nothin
 flags.DEFINE_integer("generate_test_images", 100, "Number of images to generate during test. [100]")
 FLAGS = flags.FLAGS
 
-NUM_THREADS = 1
+NUM_THREADS = 2
 
 def main(_):
   pp.pprint(flags.FLAGS.__flags)
