@@ -195,7 +195,7 @@ class DCGAN(object):
           "./data", config.dataset, self.input_fname_pattern))
         batch_idxs = min(len(self.data), config.train_size) // config.batch_size
 
-      for idx in xrange(1000, 2000):
+      for idx in xrange(0, batch_idxs):
         if config.dataset == 'mnist':
           batch_images = self.data_X[idx*config.batch_size:(idx+1)*config.batch_size]
           batch_labels = self.data_y[idx*config.batch_size:(idx+1)*config.batch_size]
