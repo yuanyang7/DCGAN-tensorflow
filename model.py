@@ -187,7 +187,7 @@ class DCGAN(object):
     else:
       print(" [!] Load failed...")
 
-    for epoch in int(xrange(config.epoch)):
+    for epoch in xrange(config.epoch):
       if config.dataset == 'mnist':
         batch_idxs = min(len(self.data_X), config.train_size) // config.batch_size
       else:      
