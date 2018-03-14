@@ -27,6 +27,8 @@ flags.DEFINE_boolean("visualize", False, "True for visualizing, False for nothin
 flags.DEFINE_integer("generate_test_images", 100, "Number of images to generate during test. [100]")
 FLAGS = flags.FLAGS
 
+NUM_THREADS = 1
+
 def main(_):
   pp.pprint(flags.FLAGS.__flags)
 
@@ -41,7 +43,7 @@ def main(_):
     os.makedirs(FLAGS.sample_dir)
 
   #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-  run_config = tf.ConfigProto()
+  run_config = tf.ConfigProto(intra_op_parallelism_threads=NUM_THREADS)
   run_config.gpu_options.allow_growth=True
 
   with tf.Session(config=run_config) as sess:
